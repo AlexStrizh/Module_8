@@ -1,3 +1,13 @@
+class IncorrectVinNumber(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(message)
+
+class IncorrectCarNumbers(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(message)
+
 class Car:
     VIN_MIN = 1000000
     VIN_MAX = 9999999
@@ -21,15 +31,6 @@ class Car:
         if len(numbers) != 6:
             raise IncorrectCarNumbers('Неверная длина номера')
 
-class IncorrectVinNumber(Exception):
-    def __init__(self, message):
-        self.message = message
-        super().__init__(message)
-
-class IncorrectCarNumbers(Exception):
-    def __init__(self, message):
-        self.message = message
-        super().__init__(message)
 
 try:
     first = Car('Model1', 1000000, 'f123dj')
